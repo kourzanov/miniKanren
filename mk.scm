@@ -155,24 +155,24 @@
 (define-syntax run
   (syntax-rules ()
     ((_ n (x) g0 g ...)
-     (take n
+     (take' n
        (lambdaf@ ()
          ((exist (x) g0 g ... 
             (lambdag@ (a)
               (cons (reify x a) '())))
           empty-a))))))
  
-(define take
+(define take'
   (lambda (n f)
     (if (and n (zero? n)) 
       '()
       (case-inf (f)
         (() '())
-        ((f) (take n f))
+        ((f) (take' n f))
         ((a) a)
         ((a f)
          (cons (car a)
-           (take (and n (- n 1)) f)))))))
+           (take' (and n (- n 1)) f)))))))
 
 (define == 
   (lambda (u v)

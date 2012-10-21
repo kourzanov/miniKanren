@@ -1275,12 +1275,12 @@
   (listo `(a b c . ,x)))
 
 (list `()))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (x)
   (listo `(a b c . ,x)))
 )))
-(printf "Testing testc14.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc14.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc14.tex-7 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -1557,12 +1557,12 @@
   (membero 'tofu l))
 
 `((tofu . _.0)))
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run* (l) 
   (membero 'tofu l))
 )))
-(printf "Testing testc14.tex-33  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc14.tex-33  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc14.tex-33 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2193,14 +2193,14 @@
     (appendxyquestion)
     appendxyanswer)
 
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run7 (r)
   (exist (x y)
     (appendo x y `(cake with ice d t))
     (== `(,x ,y) r)))
 )))
-(printf "Testing testc16.tex-17  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc16.tex-17  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc16.tex-17 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2543,12 +2543,12 @@
     (flattenogrumblequestion)
     flattenogrumbleanswer)
 
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (x)
   (flatteno x '(a b c)))
 )))
-(printf "Testing testc16.tex-38  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc16.tex-38  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc16.tex-38 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2564,12 +2564,12 @@
   (exist ()
     strangeo))
 
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (x)
   strangeo)
 )))
-(printf "Testing testc17.tex-1  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-1  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-1 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2620,13 +2620,13 @@
 
 (define never (any* fail))
 
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (q)
   never 
   (== #t q))
 )))
-(printf "Testing testc17.tex-5  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-5  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-5 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2645,13 +2645,13 @@
   (== #t q))
 
 (list #t))
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run* (q) 
   always 
   (== #t q))
 )))
-(printf "Testing testc17.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-7 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2690,35 +2690,35 @@
   (== #t q))
 
 `(#t))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (q)
   (salo never)
   (== #t q))
 )))
-(printf "Testing testc17.tex-12  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-12  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-12 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run1 (q)
   (salo never)
   fail
   (== #t q))
 )))
-(printf "Testing testc17.tex-13  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-13  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-13 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (q) 
   always 
   fail
   (== #t q))
 )))
-(printf "Testing testc17.tex-14  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-14  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-14 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -2731,15 +2731,15 @@
   (== #t q))
 
 `(#t))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run2 (q)
   (conde
     ((== #f q) always)
     ((== #t q)))
   (== #t q))
 )))
-(printf "Testing testc17.tex-16  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc17.tex-16  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc17.tex-16 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -3368,14 +3368,14 @@
     (== `(,n ,m) t)))
 
 (list `((1) (1))))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run2 (t)
   (exist (n m)
     (*o n m '(1))
     (== `(,n ,m) t)))
 )))
-(printf "Testing testc21.tex-4  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc21.tex-4  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc21.tex-4 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -3513,12 +3513,12 @@
  ((_.0 _.1 _.2 _.3 _.4 1) (_.5 _.6 _.7 . _.8))
  ((_.0 _.1 _.2 _.3 _.4 _.5 1) (_.6 _.7 _.8 _.9 . _.10)))
 )
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run1 (n)
   (<lo n n))
 )))
-(printf "Testing testc21.tex-14  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc21.tex-14  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc21.tex-14 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -3660,12 +3660,12 @@
 
 `((_.0 _.1 _.2 _.3 . _.4) (0 1 1) (1 1 1))
 )
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (n)
   (<o n n))
 )))
-(printf "Testing testc21.tex-24  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc21.tex-24  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc21.tex-24 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -3771,9 +3771,9 @@
 
 
   ))
-(define e (make-engine /otest1))
-(printf "Testing testc23.tex-/otest1  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(define e (make-engine /otest1))
+'(printf "Testing testc23.tex-/otest1  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-/otest1 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4111,12 +4111,12 @@ w)
 ;  (reify x s))
 ;`(a _.0 c _.0))
  
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (x) 
   (== `(,x) x))
 )))
-(printf "Testing testc22.tex-25  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc22.tex-25  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc22.tex-25 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4144,15 +4144,15 @@ w)
   (==-check `(,x) x))
 
 `())
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run1 (x)
   (exist (y z)
     (== x z)
     (== `(a b ,z) y)
     (== x y)))
 )))
-(printf "Testing testc22.tex-29  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc22.tex-29  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc22.tex-29 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4165,12 +4165,12 @@ w)
     (==-check x y)))
 
 `())
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (x)
   (== `(,x) x))
 )))
-(printf "Testing testc22.tex-31  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc22.tex-31  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc22.tex-31 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4283,15 +4283,15 @@ w)
     ((== 'spaghetti x))))
 
 '())
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (q)
   (conda
     (always succeed)
     (fail))
   (== #t q))
 )))
-(printf "Testing testc23.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc23.tex-7  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-7 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4304,19 +4304,19 @@ w)
   (== #t q))
 
 `(#t))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run* (q)
   (condu
     (succeed always)
     (fail))
   (== #t q))
 )))
-(printf "Testing testc23.tex-9  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc23.tex-9  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-9 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
-(define e (make-engine (lambda ()   
+'(define e (make-engine (lambda ()   
 (run1 (q)
   (conda
     (always succeed)
@@ -4324,8 +4324,8 @@ w)
   fail
   (== #t q))
 )))
-(printf "Testing testc23.tex-10  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc23.tex-10  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-10 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4435,21 +4435,21 @@ w)
 (list 
 #t
 ))
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run1 (q)
   (gen&testo pluso '(0 0 1) '(1 1) '(0 1 1)))
 )))
-(printf "Testing testc23.tex-20  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc23.tex-20  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-20 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
-(define e (make-engine (lambda () 
+'(define e (make-engine (lambda () 
 (run1 (q)
   (gen&testo pluso '(0 0 1) '(1 1) '(0 1 1)))
 )))
-(printf "Testing testc23.tex-21  (engine with ~s ticks fuel)\n" max-ticks)
-(e max-ticks
+'(printf "Testing testc23.tex-21  (engine with ~s ticks fuel)\n" max-ticks)
+'(e max-ticks
 (lambda (t v) (error 'testc23.tex-21 "infinite loop returned ~s after ~s ticks" v (- max-ticks t)))
 (lambda (e^) (void)))
 
@@ -4541,7 +4541,7 @@ w)
       (succeed)))
   '(_.0))
 
-(test-check 'why-conde-must-also-have-an-inc
+'(test-check 'why-conde-must-also-have-an-inc
   ((make-engine 
      (lambda () 
        (run 5 (q) 
